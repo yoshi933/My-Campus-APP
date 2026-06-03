@@ -28,22 +28,22 @@ Build a role-based campus app that helps learners stay on top of school life and
 
 ## 3. User Roles and Access Model
 
-## Student
+### Student
 - View personal dashboard, timetable, homework, checklist, grades/attendance, events.
 - Submit homework and manage personal checklist state.
 
-## Teacher
+### Teacher
 - Access teacher panel for class-level summary.
 - Record attendance and grades for assigned classes.
 - Review homework submissions and send announcements/templates.
 
-## School Staff / Admin
+### School Staff / Admin
 - Manage school-wide calendar events and operational templates.
 - Control user role assignments and approval workflows.
 
 ## 4. Core Modules and Functional Requirements
 
-## 4.1 Dashboard
+### 4.1 Dashboard
 Purpose: Daily decision screen.
 
 Must include:
@@ -52,7 +52,7 @@ Must include:
 - Attendance/grade snapshot.
 - Upcoming events and recent notifications.
 
-## 4.2 Homework
+### 4.2 Homework
 Purpose: Assignment tracking and submission workflow.
 
 Must include:
@@ -61,7 +61,7 @@ Must include:
 - Assignment detail with attachments/comments.
 - States: not started, in progress, submitted, graded, overdue.
 
-## 4.3 Timetable
+### 4.3 Timetable
 Purpose: Weekly class schedule and lesson context.
 
 Must include:
@@ -69,7 +69,7 @@ Must include:
 - Lesson detail panel (room, teacher, notes, related homework).
 - Week navigation and print/export action.
 
-## 4.4 Timetable Import
+### 4.4 Timetable Import
 Purpose: Add/update timetable from image/PDF.
 
 Must include:
@@ -78,7 +78,7 @@ Must include:
 - Manual correction before publish.
 - Import job history and status.
 
-## 4.5 Teacher Panel
+### 4.5 Teacher Panel
 Purpose: Operational hub for class management.
 
 Must include:
@@ -86,7 +86,7 @@ Must include:
 - Student/class table with quick actions.
 - Shortcut actions for attendance, grading, and communication templates.
 
-## 4.6 Checklist
+### 4.6 Checklist
 Purpose: Prevent forgotten materials and prep steps.
 
 Must include:
@@ -94,7 +94,7 @@ Must include:
 - Daily personal checklist completion.
 - Item-level completion history.
 
-## 4.7 Grades and Attendance
+### 4.7 Grades and Attendance
 Purpose: Performance visibility and quick updates.
 
 Must include:
@@ -102,7 +102,7 @@ Must include:
 - Teacher: score/attendance entry forms.
 - Calendar-style attendance visualization.
 
-## 4.8 Calendar
+### 4.8 Calendar
 Purpose: School events and preparation requirements.
 
 Must include:
@@ -150,7 +150,7 @@ Primary entities:
 
 ## 7. Phased Implementation Plan
 
-## Phase 0 — Foundation
+### Phase 0 — Foundation
 - Project setup, environments, auth scaffolding, UI tokens/components.
 - Shared layout (sidebar/header/content), navigation shell.
 
@@ -158,31 +158,31 @@ Exit criteria:
 - Role-aware navigation working.
 - Baseline design system available.
 
-## Phase 1 — Student Core
+### Phase 1 — Student Core
 - Dashboard, Homework, Timetable, Checklist, Calendar (student read/use flows).
 
 Exit criteria:
 - Student can complete a full daily loop: view schedule → track homework → confirm checklist → review events.
 
-## Phase 2 — Academic Records
+### Phase 2 — Academic Records
 - Grades and attendance views plus teacher entry workflow.
 
 Exit criteria:
 - Teacher can record attendance/grades; student can view updates.
 
-## Phase 3 — Teacher Operations
+### Phase 3 — Teacher Operations
 - Teacher panel KPIs, class table actions, messaging templates.
 
 Exit criteria:
 - Teacher can run daily class workflow from one screen.
 
-## Phase 4 — Timetable Import
+### Phase 4 — Timetable Import
 - OCR import pipeline with review/correction + publish.
 
 Exit criteria:
 - Timetable can be imported from file with correction before activation.
 
-## Phase 5 — Optimization
+### Phase 5 — Optimization
 - Analytics, AI-assisted prioritization, performance hardening, release readiness.
 
 Exit criteria:

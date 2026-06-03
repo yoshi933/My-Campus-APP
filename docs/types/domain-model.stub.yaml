@@ -2,6 +2,9 @@ version: 0.1
 notes: >-
   Planning scaffold for the campus app domain model.
   This file is intentionally incomplete and should evolve with module specs.
+notation:
+  enumStyle: Pipe-delimited unions are planning notation (not implementation-specific syntax).
+  derivedFieldStyle: Fields prefixed with "derived:" are computed and should not be persisted directly.
 
 entities:
   User:
@@ -10,6 +13,20 @@ entities:
       displayName: string
       role: Student|Teacher|Admin
       classGroupId: string?
+
+  RoleAssignment:
+    fields:
+      id: string
+      userId: string
+      role: Student|Teacher|Admin
+      scopeType: School|ClassGroup
+      scopeId: string?
+
+  ClassGroup:
+    fields:
+      id: string
+      name: string
+      homeroomTeacherUserId: string?
 
   Subject:
     fields:
@@ -22,7 +39,7 @@ entities:
       id: string
       classGroupId: string
       subjectId: string
-      weekday: Mon|Tue|Wed|Thu|Fri|Sat|Sun
+      weekday: Mon|Tue|Wed|Thu|Fri|Sat|Sun # internal canonical keys; localize labels in UI
       periodIndex: integer
       startTime: string
       endTime: string
@@ -34,7 +51,8 @@ entities:
       subjectId: string
       title: string
       dueAt: datetime
-      status: NotStarted|InProgress|Submitted|Graded|Overdue
+      status: NotStarted|InProgress|Submitted|Graded
+      "derived:isOverdue": boolean # derived from dueAt and current time at read/query level
 
   AttendanceRecord:
     fields:
