@@ -1,0 +1,75 @@
+version: 0.1
+notes: >-
+  Planning scaffold for the campus app domain model.
+  This file is intentionally incomplete and should evolve with module specs.
+
+entities:
+  User:
+    fields:
+      id: string
+      displayName: string
+      role: Student|Teacher|Admin
+      classGroupId: string?
+
+  Subject:
+    fields:
+      id: string
+      name: string
+      teacherUserId: string?
+
+  TimetableEntry:
+    fields:
+      id: string
+      classGroupId: string
+      subjectId: string
+      weekday: Mon|Tue|Wed|Thu|Fri|Sat|Sun
+      periodIndex: integer
+      startTime: string
+      endTime: string
+      room: string?
+
+  Assignment:
+    fields:
+      id: string
+      subjectId: string
+      title: string
+      dueAt: datetime
+      status: NotStarted|InProgress|Submitted|Graded|Overdue
+
+  AttendanceRecord:
+    fields:
+      id: string
+      userId: string
+      date: date
+      status: Present|Late|Absent|Excused
+
+  GradeRecord:
+    fields:
+      id: string
+      userId: string
+      subjectId: string
+      score: number
+      gradedAt: datetime
+
+  ChecklistTemplate:
+    fields:
+      id: string
+      name: string
+      audienceRole: Student|Teacher|Admin
+
+  CalendarEvent:
+    fields:
+      id: string
+      title: string
+      startAt: datetime
+      endAt: datetime
+      location: string?
+      requiredItems: string[]
+
+  ImportJob:
+    fields:
+      id: string
+      kind: TimetableOCR
+      status: Pending|Processing|NeedsReview|Completed|Failed
+      sourceFileName: string
+      createdByUserId: string
